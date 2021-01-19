@@ -1,0 +1,10 @@
+plugins {
+    id("de.lancom.genesis.kotlin")
+}
+repositories {
+    mavenCentral()
+}
+
+genesisKotlin {
+    withJavadocJar()
+}

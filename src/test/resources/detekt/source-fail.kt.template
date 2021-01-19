@@ -1,0 +1,13 @@
+package test
+
+import java.util.UUID
+
+fun main() {
+    println("Hallo")
+}
+
+class Main {
+    fun test() {
+        println("Hallo")
+    }
+}

@@ -1,0 +1,17 @@
+package test
+
+/**
+ * Main function.
+ */
+fun main() {
+    println("Hallo")
+}
+
+/**
+ * Main class.
+ */
+class Main {
+    fun test() {
+        println("Hallo")
+    }
+}

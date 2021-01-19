@@ -1,0 +1,9 @@
+style:
+  NewLineAtEndOfFile:
+    active: false
+
+formatting:
+  NoUnusedImports:
+    active: false
+  FinalNewline:
+    active: false

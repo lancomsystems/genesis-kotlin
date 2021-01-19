@@ -1,0 +1,4 @@
+root = true
+[*.{kt,kts}]
+disabled_rules=no-unused-imports, #see https://github.com/pinterest/ktlint#standard-rules
+insert_final_newline=false
