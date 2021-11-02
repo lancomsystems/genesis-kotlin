@@ -63,6 +63,5 @@ Execute `./gradlew -p example <tasks>` to run tasks of the [example project](./e
 
 ## Maintainers
 - [Artur Taube](https://github.com/Adduh)
-- [Frederic Kneier](https://github.com/frederic-kneier)
 - [Jonas von Andrian](https://github.com/johnny)
 - [Maya Naydenova](https://github.com/mnaydeno)
