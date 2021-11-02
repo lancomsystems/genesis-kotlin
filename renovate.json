@@ -4,8 +4,6 @@
     ":semanticPrefixFixDepsChoreOthers",
     ":ignoreModulesAndTests",
     ":autodetectPinVersions",
-    ":prHourlyLimit2",
-    ":prConcurrentLimit20",
     "workarounds:all",
     "group:all"
   ]
