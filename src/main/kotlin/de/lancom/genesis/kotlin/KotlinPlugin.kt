@@ -17,8 +17,6 @@ class KotlinPlugin : Plugin<Project> {
 
         project.tasks.withType(KotlinJvmCompile::class.java).configureEach { task ->
             task.kotlinOptions.jvmTarget = extension.jvmVersion.get().toString()
-            task.kotlinOptions.includeRuntime = true
         }
     }
-
 }

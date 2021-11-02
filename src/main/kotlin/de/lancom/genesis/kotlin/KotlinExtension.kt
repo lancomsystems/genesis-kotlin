@@ -33,25 +33,6 @@ open class KotlinExtension(
 
     fun withDokka() {
         project.pluginManager.apply(DokkaPlugin::class.java)
-        // Pull in recent plugin version compatible with java 1.11
-        project.repositories.jcenter {
-            it.name = "dokka"
-            it.mavenContent { content ->
-                //content.onlyForConfigurations("dokka")
-                content.includeGroup("org.jetbrains.dokka")
-            }
-        }
-        project.tasks.withType(Javadoc::class.java).all { task ->
-            val modifiedName = task.name.replace("Javadoc", "Dokka").replace("javadoc", "dokka")
-            task.enabled = false
-            task.dependsOn(
-                project.tasks.maybeCreate(modifiedName, DokkaTask::class.java).also {
-                    it.outputFormat = "html"
-                    it.outputDirectory = checkNotNull(task.destinationDir?.absolutePath)
-                    it.inputs.files(task.inputs.files)
-                }
-            )
-        }
     }
 
     /**
@@ -78,7 +59,7 @@ open class KotlinExtension(
 
     @JvmOverloads
     fun withKtlint(
-        ktlintVersion: String = "0.40.0"
+        ktlintVersion: String = "0.43.0"
     ) {
         project.plugins.apply(KtlintPlugin::class.java)
         project.extensions.configure(KtlintExtension::class.java) {
@@ -93,7 +74,7 @@ open class KotlinExtension(
 
     @JvmOverloads
     fun withDetekt(
-        detektVersion: String = "1.15.0",
+        detektVersion: String = "1.18.1",
     ) {
         project.plugins.apply(DetektPlugin::class.java)
 
@@ -104,14 +85,6 @@ open class KotlinExtension(
             it.reports.html.enabled = true
             it.reports.txt.enabled = false
             it.reports.xml.enabled = false
-        }
-
-        project.repositories.maven {
-            it.url = project.uri("https://dl.bintray.com/kotlin/kotlinx")
-            it.name = "kotlinx"
-            it.mavenContent { content ->
-                content.onlyForConfigurations("detekt")
-            }
         }
 
         project.dependencies.add("detektPlugins", "io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")

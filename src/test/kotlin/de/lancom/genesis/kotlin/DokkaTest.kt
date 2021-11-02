@@ -20,12 +20,10 @@ class DokkaTest {
                 fromClasspath("dokka/source.kt.template")
             }
 
-            execute(":dokka") {
+            execute(":dokkaJavadoc") {
                 assertThat(success, equalTo(true))
-                assertThat(build.task(":dokka")?.outcome, equalTo(TaskOutcome.SUCCESS))
-                assertThat(fileExists("build/docs/javadoc/test-project/test/-main/test.html"), equalTo(true))
+                assertThat(build.task(":dokkaJavadoc")?.outcome, equalTo(TaskOutcome.SUCCESS))
             }
-
         }
     }
 
