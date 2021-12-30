@@ -4,13 +4,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "de.lancom.genesis"
 version = "1.1.0"
 
-val kotlinVersion = "1.5.31"
+val kotlinVersion = "1.6.10"
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.31"
+    id("org.jetbrains.kotlin.jvm") version "1.6.10"
     id("maven-publish")
     id("java-gradle-plugin")
-    id("com.gradle.plugin-publish") version "0.16.0"
+    id("com.gradle.plugin-publish") version "0.19.0"
 }
 
 repositories {
@@ -23,16 +23,16 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.5.31")
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.6.10")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.19.0")
     implementation("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion")
-    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
+    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
 
     testImplementation(gradleTestKit())
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
 
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 gradlePlugin {
