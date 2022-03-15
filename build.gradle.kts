@@ -10,7 +10,7 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.6.10"
     id("maven-publish")
     id("java-gradle-plugin")
-    id("com.gradle.plugin-publish") version "0.19.0"
+    id("com.gradle.plugin-publish") version "0.20.0"
 }
 
 repositories {
