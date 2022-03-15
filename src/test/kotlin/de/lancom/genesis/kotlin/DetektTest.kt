@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
 class DetektTest {
 
     @Test
-    fun `generate default configuration succeeds` () {
+    fun `generate default configuration succeeds`() {
         testProject {
             file("settings.gradle") {
                 fromClasspath("settings.gradle.template")
