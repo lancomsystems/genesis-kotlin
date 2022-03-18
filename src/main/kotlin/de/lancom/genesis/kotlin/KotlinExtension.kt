@@ -7,10 +7,29 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.kotlin.allopen.gradle.SpringGradleSubplugin
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 import org.jetbrains.kotlin.noarg.gradle.KotlinJpaSubplugin
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.KtlintPlugin
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+fun Project.configureGenesisKotlin() {
+    extensions.configure(KotlinExtension::class.java) {
+        it.apply {
+            // enable additional kotlin compiler plugins
+            withSpringSupport() // org.jetbrains.kotlin.plugin.spring
+            withJpaSupport() // org.jetbrains.kotlin.plugin.jpa
+            withKtlint()
+        }
+    }
+
+    tasks.withType(KotlinJvmCompile::class.java) { kotlinJvmCompile ->
+        kotlinJvmCompile.kotlinOptions { kotlinOptions ->
+            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
+        }
+    }
+}
 
 open class KotlinExtension(
     private val project: Project
