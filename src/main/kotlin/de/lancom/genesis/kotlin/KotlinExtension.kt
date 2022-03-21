@@ -1,5 +1,6 @@
 package de.lancom.genesis.kotlin
 
+import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.JavaVersion
@@ -90,9 +91,14 @@ open class KotlinExtension(
             it.toolVersion = detektVersion
             it.parallel = true
             it.buildUponDefaultConfig = true
-            it.reports.html.enabled = true
-            it.reports.txt.enabled = false
-            it.reports.xml.enabled = false
+        }
+
+        project.tasks.withType(Detekt::class.java) { detekt ->
+            detekt.reports.run {
+                html.required.set(true)
+                txt.required.set(false)
+                xml.required.set(false)
+            }
         }
 
         project.dependencies.add("detektPlugins", "io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")

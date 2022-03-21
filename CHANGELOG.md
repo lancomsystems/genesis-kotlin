@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - added freeCompilerArgs
 - ignore genesis-kotlin when applied to non java project
+- fixed deprecated Detekt code
 
 ## [1.1.3] - 2022-03-18
 ### Changed
