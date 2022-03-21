@@ -13,13 +13,11 @@ import org.jlleitschuh.gradle.ktlint.KtlintPlugin
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 fun Project.configureGenesisKotlin() {
-    extensions.configure(KotlinExtension::class.java) {
-        it.apply {
-            // enable additional kotlin compiler plugins
-            withSpringSupport() // org.jetbrains.kotlin.plugin.spring
-            withJpaSupport() // org.jetbrains.kotlin.plugin.jpa
-            withKtlint()
-        }
+    extensions.findByType(KotlinExtension::class.java)?.run {
+        // enable additional kotlin compiler plugins
+        withSpringSupport() // org.jetbrains.kotlin.plugin.spring
+        withJpaSupport() // org.jetbrains.kotlin.plugin.jpa
+        withKtlint()
     }
 }
 
