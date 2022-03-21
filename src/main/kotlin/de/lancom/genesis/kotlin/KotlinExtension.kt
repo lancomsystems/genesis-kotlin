@@ -7,7 +7,6 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.kotlin.allopen.gradle.SpringGradleSubplugin
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 import org.jetbrains.kotlin.noarg.gradle.KotlinJpaSubplugin
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.KtlintPlugin
@@ -22,13 +21,6 @@ fun Project.configureGenesisKotlin() {
             withKtlint()
         }
     }
-
-    tasks.withType(KotlinJvmCompile::class.java) { kotlinJvmCompile ->
-        kotlinJvmCompile.kotlinOptions { kotlinOptions ->
-            kotlinOptions.jvmTarget = "11"
-            kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
-        }
-    }
 }
 
 open class KotlinExtension(
@@ -37,6 +29,8 @@ open class KotlinExtension(
     private val javaExtension = project.extensions.getByType(JavaPluginExtension::class.java)
 
     val jvmVersion = project.objects.property(JavaVersion::class.java).convention(JavaVersion.VERSION_1_8)
+
+    val freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
 
     fun withJavadocJar() {
         javaExtension.withJavadocJar()
