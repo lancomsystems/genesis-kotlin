@@ -4,13 +4,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "de.lancom.genesis"
 version = "1.1.4"
 
-val kotlinVersion = "1.6.10"
+val kotlinVersion = "1.6.20"
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.6.10"
+    id("org.jetbrains.kotlin.jvm") version "1.6.20"
     id("maven-publish")
     id("java-gradle-plugin")
-    id("com.gradle.plugin-publish") version "0.20.0"
+    id("com.gradle.plugin-publish") version "0.21.0"
 }
 
 repositories {
