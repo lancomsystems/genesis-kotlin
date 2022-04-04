@@ -6,6 +6,7 @@ import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.provider.ListProperty
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.kotlin.allopen.gradle.SpringGradleSubplugin
 import org.jetbrains.kotlin.noarg.gradle.KotlinJpaSubplugin
@@ -29,7 +30,8 @@ open class KotlinExtension(
 
     val jvmVersion = project.objects.property(JavaVersion::class.java).convention(JavaVersion.VERSION_1_8)
 
-    val freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
+    val freeCompilerArgs: ListProperty<String> = project.objects.listProperty(String::class.java)
+        .convention(listOf("-Xjsr305=strict", "-Xjvm-default=all"))
 
     fun withJavadocJar() {
         javaExtension.withJavadocJar()
