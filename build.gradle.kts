@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "de.lancom.genesis"
-version = "1.1.5"
+version = "1.1.6"
 
 val kotlinVersion = "1.6.20"
 
@@ -23,7 +23,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.6.20")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.6.10")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.19.0")
     implementation("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion")
