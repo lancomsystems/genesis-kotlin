@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "de.lancom.genesis"
-version = "1.1.6"
+version = "1.1.7"
 
 val kotlinVersion = "1.6.20"
 
