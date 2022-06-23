@@ -4,10 +4,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "de.lancom.genesis"
 version = "1.1.7"
 
-val kotlinVersion = "1.6.20"
+val kotlinVersion = "1.7.0"
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.6.20"
+    id("org.jetbrains.kotlin.jvm") version "1.7.0"
     id("maven-publish")
     id("java-gradle-plugin")
     id("com.gradle.plugin-publish") version "0.21.0"
@@ -23,11 +23,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.6.10")
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.19.0")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.7.0")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.20.0")
     implementation("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion")
-    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
+    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.3.0")
 
     testImplementation(gradleTestKit())
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
