@@ -1,9 +1,0 @@
-/out/
-build/
-/classes/
-.gradle/
-/.idea/*
-*.iml
-!/.idea/codeStyles
-!/.idea/runConfigurations
-!/.idea/inspectionProfiles
